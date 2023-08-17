@@ -1,0 +1,48 @@
+package com.org.hubprod.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.org.hubprod.delegate.ApiTrailDelegate;
+import com.org.hubprod.delegate.ControlDelegate;
+import com.org.hubprod.delegate.HeaderDelegate;
+import com.org.hubprod.delegate.HubProdDelegate;
+import com.org.hubprod.delegate.SecurityDelegate;
+import com.org.hubprod.vo.HubProdApiTrailVO;
+
+public class ProdController {
+
+	@Autowired 
+	ApiTrailDelegate apiTrailDelegate;
+	
+	@Autowired
+	ControlDelegate controlDelegate;
+	
+	@Autowired
+	HeaderDelegate headerDelegate;
+	
+	@Autowired
+	HubProdDelegate hubProdDelegate;
+	
+	@Autowired
+	SecurityDelegate securityDelegate;
+	
+	
+	// API TRAIL METHODS
+	
+	@PostMapping(value = "/getApiTrailDetails")
+	public HubProdApiTrailVO getApiTrailDetails(@RequestBody Object requestObj) {
+		HubProdApiTrailVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdApiTrailVO.class);
+		HubProdApiTrailVO appHeaderDetails = appHeaderDelegate.getAppHeaderDetails(requestVoObj.getUserId(), requestVoObj.getCompanyId());
+		return appHeaderDetails;
+	}
+	
+	@PostMapping(value = "/saveAppHeaderDetails")
+	public String saveAppHeaderDetails(@RequestBody Object requestObj) {
+		DigiAppHeaderVO requestVoObj = new ObjectMapper().convertValue(requestObj, DigiAppHeaderVO.class);
+		String status = appHeaderDelegate.saveAppHeaderDetails(requestVoObj);
+		return status;
+	}
+	
+}

@@ -1,0 +1,233 @@
+package com.org.hubprod.restcontroller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.org.hubprod.delegate.ApiTrailDelegate;
+import com.org.hubprod.delegate.ControlDelegate;
+import com.org.hubprod.delegate.HeaderDelegate;
+import com.org.hubprod.delegate.HubProdDelegate;
+import com.org.hubprod.delegate.SandboxApiTrailDelegate;
+import com.org.hubprod.delegate.SandboxControlDelegate;
+import com.org.hubprod.delegate.SandboxDelegate;
+import com.org.hubprod.delegate.SandboxHeaderDelegate;
+import com.org.hubprod.delegate.SandboxSecurityDelegate;
+import com.org.hubprod.delegate.SecurityDelegate;
+import com.org.hubprod.vo.HubProdApiTrailVO;
+import com.org.hubprod.vo.HubProdControlVO;
+import com.org.hubprod.vo.HubProdHeaderVO;
+import com.org.hubprod.vo.HubProdSecurityVO;
+import com.org.hubprod.vo.HubProdVO;
+import com.org.hubprod.vo.HubSandboxApiTrailVO;
+import com.org.hubprod.vo.HubSandboxControlVO;
+import com.org.hubprod.vo.HubSandboxHeaderVO;
+import com.org.hubprod.vo.HubSandboxSecurityVO;
+import com.org.hubprod.vo.HubSandboxVO;
+
+public class ProdController {
+
+	@Autowired 
+	ApiTrailDelegate apiTrailDelegate;
+	
+	@Autowired
+	ControlDelegate controlDelegate;
+	
+	@Autowired
+	HeaderDelegate headerDelegate;
+	
+	@Autowired
+	HubProdDelegate hubProdDelegate;
+	
+	@Autowired
+	SecurityDelegate securityDelegate;
+	
+	@Autowired
+	SandboxApiTrailDelegate sandboxApiTrailDelegate;
+	
+	@Autowired
+	SandboxControlDelegate sandboxControlDelegate;
+	
+	@Autowired
+	SandboxDelegate sandboxDelegate;
+	
+	@Autowired
+	SandboxHeaderDelegate sandboxHeaderDelegate;
+	
+	@Autowired
+	SandboxSecurityDelegate sandboxSecurityDelegate;
+	
+	
+	// API TRAIL METHODS
+	
+	@PostMapping(value = "/getProdApiTrailDetails")
+	public List<HubProdApiTrailVO> getProdApiTrailDetails(@RequestBody Object requestObj) {
+		HubProdApiTrailVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdApiTrailVO.class);
+		List<HubProdApiTrailVO> apiTrailDetails = apiTrailDelegate.getApiTrailDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getProdId(), requestVoObj.getApiId());
+		return apiTrailDetails;
+	}
+	
+	@PostMapping(value = "/saveProdApiTrailDetails")
+	public String saveProdApiTrailDetails(@RequestBody Object requestObj) {
+		HubProdApiTrailVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdApiTrailVO.class);
+		String status = apiTrailDelegate.saveApiTrailDetails(requestVoObj);
+		return status;
+	}
+	
+	// CONTROL METHOD
+	
+	@PostMapping(value = "/getProdControlDetails")
+	public List<HubProdControlVO> getProdControlDetails(@RequestBody Object requestObj) {
+		HubProdControlVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdControlVO.class);
+		List<HubProdControlVO> controlDetails = controlDelegate.getControlDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getProdId());
+		return controlDetails;
+	}
+	
+	@PostMapping(value = "/saveProdControlDetails")
+	public String saveProdControlDetails(@RequestBody Object requestObj) {
+		HubProdControlVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdControlVO.class);
+		String status = controlDelegate.saveControlDetails(requestVoObj);
+		return status;
+	}
+	
+	// HEADER METHOD
+	
+	@PostMapping(value = "/getProdHeaderDetails")
+	public List<HubProdHeaderVO> getProdHeaderDetails(@RequestBody Object requestObj) {
+		HubProdHeaderVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdHeaderVO.class);
+		List<HubProdHeaderVO> headerDetails = headerDelegate.getHeaderDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getProdId());
+		return headerDetails;
+	}
+	
+	@PostMapping(value = "/saveProdHeaderDetails")
+	public String saveProdHeaderDetails(@RequestBody Object requestObj) {
+		HubProdHeaderVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdHeaderVO.class);
+		String status = headerDelegate.saveHeaderDetails(requestVoObj);
+		return status;
+	}
+	
+	
+	// HUB PROD METHOD
+	
+	@PostMapping(value = "/getProdDetails")
+	public HubProdVO getHubProdDetails(@RequestBody Object requestObj) {
+		HubProdVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdVO.class);
+		HubProdVO hubProdDetails = hubProdDelegate.getHubProdDetails(requestVoObj.getUserId(), requestVoObj.getAppId());
+		return hubProdDetails;
+	}
+	
+	@PostMapping(value = "/saveProdDetails")
+	public String saveHubProdDetails(@RequestBody Object requestObj) {
+		HubProdVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdVO.class);
+		String status = hubProdDelegate.saveHubProdDetails(requestVoObj);
+		return status;
+	}
+	
+	// SECURITY METHODS
+	
+	
+	@PostMapping(value = "/getProdSecurityDetails")
+	public HubProdSecurityVO getProdSecurityDetails(@RequestBody Object requestObj) {
+		HubProdSecurityVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdSecurityVO.class);
+		HubProdSecurityVO securityDetails = securityDelegate.getSecurityDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getProdId());
+		return securityDetails;
+	}
+	
+	@PostMapping(value = "/saveProdSecurityDetails")
+	public String saveProdSecurityDetails(@RequestBody Object requestObj) {
+		HubProdSecurityVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdSecurityVO.class);
+		String status = securityDelegate.saveSecurityDetails(requestVoObj);
+		return status;
+	}
+	
+	
+	//For SandboxApiTrailDelegate
+	@PostMapping(value = "/getApiTrailDetails")
+    public List<HubSandboxApiTrailVO> getApiTrailDetails(@RequestBody Object requestObj) {
+        HubSandboxApiTrailVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxApiTrailVO.class);
+        List<HubSandboxApiTrailVO> apiTrailDelegate = sandboxApiTrailDelegate.getSandboxApiTrailDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getSandboxId(), requestVoObj.getApiId());
+        return apiTrailDelegate;
+    }
+
+    @PostMapping(value = "/saveApiTrailDetails")
+    public String saveApiTrailDetails(@RequestBody Object requestObj) {
+        HubSandboxApiTrailVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxApiTrailVO.class);
+        String status = sandboxApiTrailDelegate.saveSandboxApiTrailDetails(requestVoObj);
+        return status;
+    }
+	    
+	 //For SandboxControlDelegate
+  	@PostMapping(value = "/getControlDetails")
+      public List<HubSandboxControlVO> getControlDetails(@RequestBody Object requestObj) {
+          HubSandboxControlVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxControlVO.class);
+          List<HubSandboxControlVO> sandboxControlDetails = sandboxControlDelegate.getSandboxControlDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getSandboxId());
+          return sandboxControlDetails;
+      }
+
+	@PostMapping(value = "/saveControlDetails")
+	public String saveControlDetails(@RequestBody Object requestObj) {
+		HubSandboxControlVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxControlVO.class);
+		String status = sandboxControlDelegate.saveSandboxControlDetails(requestVoObj);
+		return status;
+	}
+  
+      
+      //For sandboxHeaderDelegate
+     @PostMapping(value = "/getHeaderDetails")
+     public List<HubSandboxHeaderVO> getHeaderDetails(@RequestBody Object requestObj) {
+         HubSandboxHeaderVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxHeaderVO.class);
+         List<HubSandboxHeaderVO> sandboxHeaderDetails = sandboxHeaderDelegate.getSandboxHeaderDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getSandboxId());
+         return sandboxHeaderDetails;
+     }
+
+     @PostMapping(value = "/saveHeaderDetails")
+     public String saveHeaderDetails(@RequestBody Object requestObj) {
+         HubSandboxHeaderVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxHeaderVO.class);
+         String status = sandboxHeaderDelegate.saveSandboxHeaderDetails(requestVoObj);
+         return status;
+     }
+          
+     //For SandboxSecurityDelegate
+     @PostMapping(value = "/getSecurityDetails")
+	 public HubSandboxSecurityVO getSecurityDetails(@RequestBody Object requestObj) {
+    	 HubSandboxSecurityVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxSecurityVO.class);
+	     HubSandboxSecurityVO sandboxSecurityDetails = sandboxSecurityDelegate.getSandboxSecurityDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getSandboxId());
+	     return sandboxSecurityDetails;
+	 }
+
+     @PostMapping(value = "/saveSecurityDetails")
+     public String saveSecurityDetails(@RequestBody Object requestObj) {
+    	 HubSandboxSecurityVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxSecurityVO.class);
+    	 String status = sandboxSecurityDelegate.saveSandboxSecurityDetails(requestVoObj);
+    	 return status;
+     }
+        
+        //For SandboxDelegate
+     @PostMapping(value = "/getSandboxDetails")
+     	public HubSandboxVO getSandboxDetails(@RequestBody Object requestObj) {
+    	 HubSandboxVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxVO.class);
+    	 HubSandboxVO sandboxDetails = sandboxDelegate.getSandboxetails(requestVoObj.getUserId(), requestVoObj.getAppId());
+    	 return sandboxDetails;
+     }
+
+     @PostMapping(value = "/saveSandboxDetails")
+     public String saveDetails(@RequestBody Object requestObj) {
+    	 HubSandboxVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubSandboxVO.class);
+    	 String status = sandboxDelegate.saveSandboxDetails(requestVoObj);
+    	 return status;
+     }
+     
+     // SANDBOX PROD ENV
+     
+     
+     
+     
+     
+     
+     
+     
+	
+}

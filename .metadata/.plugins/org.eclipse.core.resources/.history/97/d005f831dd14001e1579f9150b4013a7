@@ -1,0 +1,67 @@
+package com.org.hubprod.restcontroller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.org.hubprod.delegate.ApiTrailDelegate;
+import com.org.hubprod.delegate.ControlDelegate;
+import com.org.hubprod.delegate.HeaderDelegate;
+import com.org.hubprod.delegate.HubProdDelegate;
+import com.org.hubprod.delegate.SecurityDelegate;
+import com.org.hubprod.vo.HubProdApiTrailVO;
+import com.org.hubprod.vo.HubProdControlVO;
+
+public class ProdController {
+
+	@Autowired 
+	ApiTrailDelegate apiTrailDelegate;
+	
+	@Autowired
+	ControlDelegate controlDelegate;
+	
+	@Autowired
+	HeaderDelegate headerDelegate;
+	
+	@Autowired
+	HubProdDelegate hubProdDelegate;
+	
+	@Autowired
+	SecurityDelegate securityDelegate;
+	
+	
+	// API TRAIL METHODS
+	
+	@PostMapping(value = "/getApiTrailDetails")
+	public List<HubProdApiTrailVO> getApiTrailDetails(@RequestBody Object requestObj) {
+		HubProdApiTrailVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdApiTrailVO.class);
+		List<HubProdApiTrailVO> apiTrailDetails = apiTrailDelegate.getApiTrailDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getProdId(), requestVoObj.getApiId());
+		return apiTrailDetails;
+	}
+	
+	@PostMapping(value = "/saveApiTrailDetails")
+	public String saveApiTrailDetails(@RequestBody Object requestObj) {
+		HubProdApiTrailVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdApiTrailVO.class);
+		String status = apiTrailDelegate.saveApiTrailDetails(requestVoObj);
+		return status;
+	}
+	
+	// CONTROL METHOD
+	
+	@PostMapping(value = "/getControlDetails")
+	public List<HubProdControlVO> getControlDetails(@RequestBody Object requestObj) {
+		HubProdControlVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdControlVO.class);
+		List<HubProdControlVO> controlDetails = controlDelegate.getControlDetails(requestVoObj.getUserId(), requestVoObj.getAppId(), requestVoObj.getProdId());
+		return controlDetails;
+	}
+	
+	@PostMapping(value = "/saveApiTrailDetails")
+	public String saveControlDetails(@RequestBody Object requestObj) {
+		HubProdControlVO requestVoObj = new ObjectMapper().convertValue(requestObj, HubProdControlVO.class);
+		String status = apiTrailDelegate.saveApiTrailDetails(requestVoObj);
+		return status;
+	}
+}

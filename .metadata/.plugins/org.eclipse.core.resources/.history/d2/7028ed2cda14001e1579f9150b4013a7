@@ -1,0 +1,13 @@
+package com.org.hubprod.delegate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.org.hubprod.helper.ApiTrailHelper;
+
+@Component
+public class ApiTrailDelegate {
+
+	@Autowired
+	ApiTrailHelper apiTrailHelper;
+}

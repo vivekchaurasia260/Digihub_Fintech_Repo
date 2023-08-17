@@ -1,0 +1,9 @@
+package com.org.hubsandbox.dao;
+
+import com.org.hubsandbox.vo.HubSandboxVO;
+
+public interface SandboxDAO {
+
+	public HubSandboxVO getSandboxDetails(String userId,String appId );
+	public String saveSandboxDetails(HubSandboxVO sandboxObj);
+}

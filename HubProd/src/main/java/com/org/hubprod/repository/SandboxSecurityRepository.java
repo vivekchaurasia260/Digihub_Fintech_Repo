@@ -1,0 +1,13 @@
+package com.org.hubsandbox.repository;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.org.hubprod.vo.HubSandboxSecurityVO;
+
+public interface SandboxSecurityRepository  extends CrudRepository<HubSandboxSecurityVO,String>{
+	
+	@Query("SELECT t FROM HubSandboxSecurityVO t where t.userId  = ?1 and t.appId=?2 and t.sandboxId=?3")
+	public HubSandboxSecurityVO getSandboxSecurityDetails(String userId,String appId,String sandboxId);
+
+}

@@ -1,0 +1,23 @@
+package com.org.hubprod.vo;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity()
+@Table(name = "hub_prod_control")
+public class HubProdControlVO {
+	
+	@Id
+	@Column(name = "user_id")
+	String userId;
+	@Column(name = "app_id")
+	String appId;
+	@Column(name = "prod_id")
+	String prodId;
+	@Column(name = "control_name")
+	String controlName;
+	@Column(name = "control_value")
+	String controlValue;
+}

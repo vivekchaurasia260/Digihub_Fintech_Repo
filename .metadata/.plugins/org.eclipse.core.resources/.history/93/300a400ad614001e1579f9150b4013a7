@@ -1,0 +1,12 @@
+package com.org.hubprod.dao;
+
+import java.util.List;
+
+import com.org.hubprod.vo.HubProdApiTrailVO;
+import com.org.hubprod.vo.HubProdControlVO;
+
+public interface ControlDAO {
+	
+	public List<HubProdControlVO> getControlDetails(String userId, String appId, String sandBoxId, String apiId);
+	public String saveControlDetails(HubProdControlVO controlDetailsObj);
+}

@@ -1,0 +1,9 @@
+package com.org.hubprod.dao;
+
+import com.org.hubprod.vo.HubProdVO;
+
+public interface HubProdDAO {
+
+	public HubProdVO getHubProdDetails(String docId, String seq);
+	public String saveHubProdDetails(HubProdVO appCompanyDetailsObj);
+}

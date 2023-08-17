@@ -1,0 +1,11 @@
+package com.org.hubprod.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.org.hubprod.delegate.ApiTrailDelegate;
+
+public class ProdController {
+
+	@Autowired 
+	ApiTrailDelegate apiTrailDelegate;
+}

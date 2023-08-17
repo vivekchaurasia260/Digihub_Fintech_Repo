@@ -1,0 +1,27 @@
+package com.org.hubprod.helper;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.org.hubprod.dao.HubProdDAO;
+import com.org.hubprod.vo.HubProdVO;
+
+@Component
+public class HubProdHelper {
+	
+	@Autowired
+	HubProdDAO hubProdDAO;
+	
+	
+	public HubProdVO getHubProdDetails(String userId, String appId)
+	{
+		return hubProdDAO.getHubProdDetails(userId, appId);
+	}
+	
+	
+	public String saveHubProdDetails(HubProdVO hubProdDetailsObj)
+	{
+		
+		
+	}
+}

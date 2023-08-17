@@ -1,0 +1,34 @@
+package com.org.hubprod.dao.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.org.hubprod.dao.ControlDAO;
+import com.org.hubprod.repository.ControlRepository;
+import com.org.hubprod.vo.HubProdControlVO;
+
+@Service
+public class ControlDAOImpl implements ControlDAO{
+	
+	@Autowired
+	ControlRepository controlRepository;
+
+	@Override
+	public List<HubProdControlVO> getControlDetails(String userId, String appId, String sandBoxId) {
+		
+		return controlRepository.getControlDetails(userId, appId, sandBoxId);
+	}
+
+	@Override
+	public String saveControlDetails(HubProdControlVO controlDetailsObj) {
+		String status = "{\"status\":\"success\"}";
+		try {
+			controlRepository.save(controlDetailsObj);
+		} catch (Exception ex) {
+			status = "{\"status\":\"error\"}";
+		}
+		return status;
+	}
+}

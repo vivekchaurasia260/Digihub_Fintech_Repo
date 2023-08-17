@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.helper.HubProdHelper"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.AutoConfigureOrder"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.repository.ApiTrailRepository"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.repository.ControlRepository"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.repository.HeaderRepository"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.repository.HubProdRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.repository.SecurityRepository"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.dao.ApiTrailDAO"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.dao.ControlDAO"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.dao.HeaderDAO"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.dao.HubProdDAO"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.dao.SecurityDAO"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.helper.ControlHelper"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.helper.HeaderHelper"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.helper.SecurityHelper"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.helper.ApiTrailHelper"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.delegate.ApiTrailDelegate"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.delegate.ControlDelegate"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.delegate.HeaderDelegate"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.delegate.HubProdDelegate"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.delegate.SecurityDelegate"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.vo.HubProdApiTrailVO"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.vo.HubProdControlVO"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.vo.HubProdHeaderVO"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.vo.HubProdVO"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.vo.HubProdSecurityVO"/>
+    <fullyQualifiedTypeName name="com.org.hubsandbox.helper.SandboxApiTrailHelper"/>
+    <fullyQualifiedTypeName name="com.org.hubprod.vo.HubSandboxVO"/>
+</qualifiedTypeNameHistroy>

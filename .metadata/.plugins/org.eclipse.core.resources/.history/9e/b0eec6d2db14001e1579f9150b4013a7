@@ -1,0 +1,30 @@
+package com.org.hubprod.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.org.hubprod.delegate.ApiTrailDelegate;
+import com.org.hubprod.delegate.ControlDelegate;
+import com.org.hubprod.delegate.HeaderDelegate;
+import com.org.hubprod.delegate.HubProdDelegate;
+import com.org.hubprod.delegate.SecurityDelegate;
+
+public class ProdController {
+
+	@Autowired 
+	ApiTrailDelegate apiTrailDelegate;
+	
+	@Autowired
+	ControlDelegate controlDelegate;
+	
+	@Autowired
+	HeaderDelegate headerDelegate;
+	
+	@Autowired
+	HubProdDelegate hubProdDelegate;
+	
+	@Autowired
+	SecurityDelegate securityDelegate;
+	
+	
+	
+}

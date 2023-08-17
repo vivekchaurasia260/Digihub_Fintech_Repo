@@ -1,0 +1,5 @@
+package com.org.hubprod.repository;
+
+public interface ControlRepository {
+
+}

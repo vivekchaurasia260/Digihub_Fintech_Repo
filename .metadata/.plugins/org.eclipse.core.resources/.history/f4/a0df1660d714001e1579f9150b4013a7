@@ -1,0 +1,10 @@
+package com.org.hubprod.dao.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.org.hubprod.dao.ControlDAO;
+
+@Service
+public class ControlDAOImpl implements ControlDAO{
+
+}

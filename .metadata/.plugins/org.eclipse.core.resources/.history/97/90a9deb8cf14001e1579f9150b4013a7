@@ -1,0 +1,37 @@
+package com.org.hubprod.vo;
+
+import java.sql.Timestamp;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity()
+@Table(name = "hub_prod_security")
+public class HubProdSecurityVO {
+	@Id
+	@Column(name = "user_id")
+	String userId;
+	@Column(name = "app_id")
+	String appId;
+	@Column(name = "prod_id")
+	String prodId;
+	@Column(name = "cbs_system")
+	String cbsSystem;
+	@Column(name = "cbs_module_id")
+	String cbsModuleId;
+	@Column(name = "security_type")
+	String securityType;
+	@Column(name = "security_key")
+	String securityKey;
+	@Column(name = "key_validity_start_time")
+	Timestamp keyValidityStartTime;
+	@Column(name = "key_validity_end_time")
+	Timestamp keyValidityEndTime;
+	@Column(name = "ts_created")
+	Timestamp tsCreated;
+	@Column(name = "ts_updated")
+	Timestamp tsUpdated;
+	
+}

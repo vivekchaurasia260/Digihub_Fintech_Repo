@@ -1,0 +1,9 @@
+package com.org.hubprod.dao;
+
+import com.org.hubprod.vo.HubProdApiTrailVO;
+
+public interface ApiTrailDAO {
+	
+	public HubProdApiTrailVO getApiTrailDetails(String userId, String appId, String sandBoxId, String apiId);
+	public String saveApiTrailDetails(HubProdApiTrailVO apiTrailDetailsObj);
+}

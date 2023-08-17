@@ -1,0 +1,23 @@
+package com.org.hubprod.dao.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.org.hubprod.dao.SecurityDAO;
+import com.org.hubprod.vo.HubProdSecurityVO;
+
+@Service
+public class SecurityDAOImpl implements SecurityDAO {
+
+	@Override
+	public HubProdSecurityVO getSecurityDetails(String userId, String appId, String sandBoxId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String saveSecurityDetails(HubProdSecurityVO securityDetailsObj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.org.hubsandbox.dao;
+
+import java.util.List;
+
+import com.org.hubsandbox.vo.HubSandboxHeaderVO;
+
+public interface SandboxHeaderDAO {
+
+	public List<HubSandboxHeaderVO> getSandboxHeaderDetails(String userId,String appId,String sandboxId );
+	public String saveSandboxHeaderDetails(HubSandboxHeaderVO sandboxHeaderObj);
+}

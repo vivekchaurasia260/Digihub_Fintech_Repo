@@ -1,0 +1,27 @@
+package com.org.hubprod.delegate;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.org.hubprod.helper.ControlHelper;
+import com.org.hubprod.vo.HubProdControlVO;
+
+@Component
+public class ControlDelegate {
+
+	@Autowired
+	ControlHelper controlHelper;
+	
+	public List<HubProdControlVO> getcontrolDetails(String userId, String appId, String sandBoxId) {
+		
+		return controlHelper.getControlDetails(userId, appId, sandBoxId);
+	}
+	
+	public String saveControlDetails(HubProdControlVO controlDetailsObj) {
+		
+		return controlHelper.saveControlDetails(controlDetailsObj);
+	}
+	
+}

@@ -1,0 +1,24 @@
+package com.org.hubprod.helper;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.org.hubprod.dao.SandboxControlDAO;
+import com.org.hubprod.vo.HubSandboxControlVO;
+
+@Component
+public class SandboxControlHelper {
+
+	@Autowired
+	SandboxControlDAO sandboxControlDAO;
+	
+	public List<HubSandboxControlVO> getSandboxControlDetails(String userId,String appId,String sandboxId ) {
+		return sandboxControlDAO.getSandboxControlDetails(userId,appId,sandboxId);
+	}
+	
+	public String saveSandboxControlDetails(HubSandboxControlVO controlDetailsObj) {
+		return sandboxControlDAO.saveSandboxControlDetails(controlDetailsObj);
+	}
+}

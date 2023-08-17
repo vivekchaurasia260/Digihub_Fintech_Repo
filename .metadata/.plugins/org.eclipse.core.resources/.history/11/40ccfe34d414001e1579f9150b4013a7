@@ -1,0 +1,11 @@
+package com.org.hubprod.repository;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.org.hubprod.vo.HubProdHeaderVO;
+
+@Repository
+public interface HeaderRepository extends CrudRepository<HubProdHeaderVO, String>{
+
+}

@@ -1,0 +1,5 @@
+package com.org.hubprod.vo;
+
+public class HubProdSecurityVO {
+
+}

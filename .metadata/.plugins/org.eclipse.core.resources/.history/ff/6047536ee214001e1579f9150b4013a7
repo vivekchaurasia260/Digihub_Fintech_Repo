@@ -1,0 +1,11 @@
+package com.org.hubsandbox.dao;
+
+import java.util.List;
+
+import com.org.hubsandbox.vo.HubSandboxControlVO;
+
+public interface SandboxControlDAO {
+
+	public List<HubSandboxControlVO> getSandboxControlDetails(String userId,String appId,String sandboxId );
+	public String saveSandboxControlDetails(HubSandboxControlVO sandboxControlObj);
+}
