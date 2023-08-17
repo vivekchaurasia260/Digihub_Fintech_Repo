@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="com.org.digihub.helper.UserOpsHelper"/>
+    <fullyQualifiedTypeName name="com.org.digihub.delegate.UserOpsDelegate"/>
+    <fullyQualifiedTypeName name="com.org.digihub.dao.UserOpsDAO"/>
+    <fullyQualifiedTypeName name="com.org.digihub.vo.DigiUserOpsVO"/>
+    <fullyQualifiedTypeName name="com.org.digihub.repository.UserOpsRepository"/>
+    <fullyQualifiedTypeName name="com.org.digihub.repository.ConfigQuestionRepository"/>
+    <fullyQualifiedTypeName name="com.org.digihub.dao.ConfigQuestionDAO"/>
+    <fullyQualifiedTypeName name="com.org.digihub.helper.ConfigQuestionHelper"/>
+    <fullyQualifiedTypeName name="com.org.digihub.delegate.ConfigQuestionDelegate"/>
+    <fullyQualifiedTypeName name="com.org.digihub.vo.DigiConfigQuestionVO"/>
+    <fullyQualifiedTypeName name="com.org.digihub.repository.AppEmployeesRepository"/>
+    <fullyQualifiedTypeName name="com.org.digihub.dao.AppEmployeesDAO"/>
+    <fullyQualifiedTypeName name="com.org.digihub.helper.AppEmployeesHelper"/>
+    <fullyQualifiedTypeName name="com.org.digihub.delegate.AppEmployeesDelegate"/>
+    <fullyQualifiedTypeName name="com.org.digihub.vo.DigiAppEmployeesVO"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.org.digihub.repository.AppDocumentDetailsRepository"/>
+    <fullyQualifiedTypeName name="com.org.digihub.dao.AppDocumentDetailsDAO"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.org.digihub.helper.AppDocumentDetailsHelper"/>
+    <fullyQualifiedTypeName name="com.org.digihub.vo.DigiAppDocumentDetailsVO"/>
+    <fullyQualifiedTypeName name="com.org.digihub.delegate.AppDocumentDetailsDelegate"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="java.security.Timestamp"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="com.org.digihub.delegate.UserFintechDelegate"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>
